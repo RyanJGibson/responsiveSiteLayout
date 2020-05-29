@@ -1,0 +1,594 @@
+html, body{
+	height:100%;
+	/*overflow:hidden;*/
+	background-color:#f2f6f9;
+	margin:0px;
+	overflow-x:hidden;
+}
+
+
+	
+#dashheader {grid-area:gadashheader;}
+#moviesWatched {grid-area:gamoviesWatched;}
+#myCoupons {grid-area:gamyCoupons;}
+#popularMovies {grid-area:gapopularMovies;}
+#randomCard {grid-area:garandomCard;}
+#blank {grid-area:gablank;}
+
+#dashheader {
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+	text-align:left;
+	padding-top:20px
+}
+#moviesWatched {
+
+}
+#myCoupons {
+
+}
+#popularMovies {
+
+}
+#randomCard {
+	transform: rotateY(0deg);
+}
+
+#flipCard{
+	opacity:0.4
+	transform: rotateY(0deg);
+	transition: 2s;
+}
+
+
+
+
+
+.nav{
+	
+	background-color:#333333;
+	height:auto;
+	/*margin-right:10px;*/
+	display:block;
+	position:fixed;
+	height:100%
+}
+
+.navHeader{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 23px;
+	/* identical to box height */
+	text-transform: uppercase;
+	color: #FFFFFF;
+	
+	padding:10px;
+
+}
+
+
+.navMenuItem{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height:60px;
+	cursor:pointer;
+	user-select: none;
+}
+
+
+.navMenuIcon{
+	width:25px;
+	margin:10px;
+	flex-shrink:0;
+	cursor:pointer;
+	user-select: none;
+}
+
+.navMenuItemText{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color:#FFFFFF;
+	flex-grow:1;
+}
+
+
+
+
+
+.pieIcon{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/pie.svg);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width:25px;
+	height:25px;
+}
+
+
+.historyIcon{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/history.svg);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width:25px;
+	height:25px;
+}
+
+
+.giftIcon{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/gift.svg);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width:25px;
+	height:25px;
+}
+
+.faceIcon{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/face.svg);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width:25px;
+	height:25px;
+}
+
+.megaPhoneIcon{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/mega_phone.svg);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width:25px;
+	height:25px;
+}
+
+.menuItemOff{
+	opacity:0.6;
+}
+
+
+
+
+
+
+
+.dashBodyText{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 150%;
+	
+
+}
+
+.dashBodySubText{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 14px;
+	color:#585D6D;
+}
+
+
+
+.dashboard{
+
+	height:100%;
+	display: grid;
+
+	grid-template-areas:
+	'gadashheader gadashheader gadashheader' 
+	'gamoviesWatched gamyCoupons gamyCoupons'
+	'gamoviesWatched gapopularMovies garandomCard';
+
+	grid-template-rows: 46px 1fr 350px 20px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	
+	margin-left:262px;
+}
+
+
+.moviesWatchedInner{
+	height:100%;
+}
+
+
+
+	.navWide{
+		display:blcck;
+		width:262px;
+	}
+	
+	.navNarrow{
+		display:none;
+		width:62px;
+	}
+
+@media screen and (max-width: 1200px) {
+	.dashboard{
+		margin-left:62px;
+	}
+	
+	.navWide{
+		display:none;
+	}
+	
+	.navNarrow{
+		display:block;
+	}
+}
+
+@media screen and (max-width: 850px) {
+
+
+	.moviesWatchedInner{
+		height:200px;
+	}
+	
+	.dashboard{
+	
+		display: grid;
+		
+		grid-template-areas:
+		'gadashheader' 
+		'gamoviesWatched'
+		'gamyCoupons'
+		'gapopularMovies'
+		'garandomCard'
+		;
+		
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+
+		padding-left: 10px;
+		padding-right: 10px;
+		
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.nav{
+		display:none;
+	}
+	.dashboard{
+		margin-left:0px;
+	}
+	
+}
+
+
+
+
+.panelBox{
+	background: #FFFFFF;
+	box-shadow: 0px 12px 14px rgba(0, 0, 0, 0.05);
+	
+	--notchSize: 10px;
+
+	clip-path: 
+	polygon(
+		0% var(--notchSize), 
+		var(--notchSize) 0%, 
+		calc(100% - var(--notchSize)) 0%, 
+		100% var(--notchSize), 
+		100% calc(100% - var(--notchSize)), 
+		calc(100% - var(--notchSize)) 100%, 
+		var(--notchSize) 100%, 
+		0% calc(100% - var(--notchSize))
+	);
+	padding:20px;
+	padding-top:17px;
+}
+
+.panelBoxHeader{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+
+	text-transform: uppercase;
+
+	color: #585D6D;
+}
+
+.addNewMovieText{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-decoration-line: underline;
+	/* Dark Grey */
+	color: #141414;
+	text-align:right;
+	display:block;
+	cursor:pointer;
+	user-select: none;
+}
+
+.moviesWatchedInner{
+	display: flex;
+	flex-direction: column;
+
+}
+.moviesWatchedInnerItem{
+	flex-shrink:0;
+}
+
+.moviesWatchedinnerItemCenter{
+	flex-grow:1;
+}
+
+.moviesWatchedInnerHeader{
+	display: flex;
+}
+
+
+.moviesWatchedInnerHeaderItemCenter{
+	flex-grow:1;
+}
+
+.moviesWatchedCounter{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 72px;
+	line-height: 84px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	display:block;
+
+	margin: 0;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align:center;
+}
+
+.largeButton{
+	width:100%;
+	background: #00BD71;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 6px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	/* identical to box height */
+	text-align: center;
+	color: #FFFFFF;
+	padding-top: 10px;
+    padding-bottom: 10px;
+	cursor:pointer;
+	user-select: none;
+}
+
+.largeFlipButton{
+	width:100%;
+	border: 1px solid #D5DEE7;
+	box-sizing: border-box;
+	border-radius: 6px;
+	color: #FFFFFF;
+	padding-top: 10px;
+    padding-bottom: 10px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 19px;
+
+
+	text-align: center;
+	text-transform: uppercase;
+
+
+	color: #585D6D;
+	
+	cursor:pointer;
+	user-select: none;
+}
+
+
+
+
+
+.coupon{
+
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height:85px;
+}
+
+
+
+.couponLeft{
+	text-align:center;
+	width:50px;
+	flex-shrink:0;
+}
+
+.couponMiddle{
+	flex-grow:1;
+	min-width: 60px;
+}
+
+.couponRight{
+	width:78px;
+	text-align:center;
+	padding:10px;
+	flex-shrink:0;
+}
+
+.couponImg{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/star.svg), url(../svg/ticket.svg);
+	background-repeat: no-repeat, no-repeat;
+	background-position:4px 4px, 0px 0px;
+	width:24px;
+	height:18px;
+
+}
+
+
+
+
+.popularMovie{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 150%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height:60px;
+	//background-color:#ffff99
+	
+}
+
+.popularMovieLeft{
+	
+	flex-shrink:0;
+	--notchSize: 5px;
+
+	clip-path: 
+	polygon(
+		0% var(--notchSize), 
+		var(--notchSize) 0%, 
+		calc(100% - var(--notchSize)) 0%, 
+		100% var(--notchSize), 
+		100% calc(100% - var(--notchSize)), 
+		calc(100% - var(--notchSize)) 100%, 
+		var(--notchSize) 100%, 
+		0% calc(100% - var(--notchSize))
+	);
+}
+
+.popularMovieMiddle{
+	flex-grow:1;
+	min-width: 60px;
+	padding-left:10px;
+}
+
+.popularMovieRight{
+	width:35px;
+	text-align:center;
+	padding:10px;
+	flex-shrink:0;
+}
+
+.popularMoviesScroll{
+	max-height:300px;
+	overflow:auto;
+	margin-top:10px;
+}
+
+.playButtonImg{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/play_arrow.svg), url(../svg/play_circ.svg);
+	background-repeat: no-repeat, no-repeat;
+	background-position:12px 10px, 0px 0px;
+	width:35px;
+	height:35px;
+}
+
+#smileIcon{
+	display:block;
+	text-align:center;
+	background-image: url(../svg/smile.svg);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width:36px;
+	height:40px;
+	margin:30px auto;	
+	transition: 4s;
+}
+
+
+.randomCardHeader{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 23px;
+	/* identical to box height */
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: #141414;
+}
+
+
+
+.randomCardBody{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 150%;
+
+	text-align: center;
+
+	color: #585D6D;
+	padding-top:20px;
+	padding-bottom:20px;
+	min-width:200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
